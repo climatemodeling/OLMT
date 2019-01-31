@@ -162,7 +162,7 @@ def submit(fname, project='', submit_type='qsub', job_depend=''):
     if (submit_type == 'sbatch' and project != ''):
         submit_type = submit_type+' --account '+project
     if ('sbatch' in submit_type):
-	job_depend_flag = ' --dependency=afterok:'
+      job_depend_flag = ' --dependency=afterok:'
     if (job_depend != ''):
         os.system(submit_type+job_depend_flag+job_depend+' '+fname+' > temp/jobinfo')
     else:
